@@ -8,8 +8,7 @@ body {
 *,
 *:before,
 *:after {
-	box-sizing: border-box;/* всегда прописываем для удобства
-	что бы не считать падинги*/
+	box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,108 +24,212 @@ p {
 /* container */
 .container {
 	width: 100%;
-	max-width: 1115px; /*ширина по сетке*/
+	max-width: 1115px; 
 	padding: 0;
-	margin: 0 auto; /* по центву выравн?????? хз*/
+	margin: 0 auto;
 }
 
 /*SECTION HEADER*/
 /*Header */
 
 .header {
-	width: 100%; /*ширина */
-	position: absolute; /*на всю полощадь??*/
+	width: 100%; 
+	position: absolute; 
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 1000;  /*поверх всего ???*/
+	z-index: 1000;  
 	padding-top: 58px;
 	padding-bottom: 15px;
 	background-color: #87509c;
 }
 
-/*Делаем два элемента по разные стороны,
- для их обертки пишем*/
 .header__inner {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;/* что бы выровнять 
-	по горизонтали по центру*/
+	align-items: center;
 }
 
 /*SECTION NAVIGATION*/
 /*Nav*/
 
-.nav {
+.desktop-nav {
 	font-size: 16px;
-	text-transform: uppercase; /*весь текст капсом*/
+	text-transform: uppercase;
 }
 
-.nav__link {
-	display: inline-block; /*что бы шли в строку*/
+.desktop-nav__link {
+	display: inline-block;
 	vertical-align: top;
 	margin-right: 20px;
 	color: #fff;
 	position: relative;
 	background-color: #87509c;
     padding: 3px 13px;
-	text-decoration: none; /*убираем подчеркивание
-	снизу и т.д*/
+	text-decoration: none; 
 }
 
-.nav__link:last-child {
+.desktop-nav__link:last-child {
 	margin-right: 0;
 }
 
 /*Делаем строчное подчеркивание при наведении*/
-/*Делаем строчное подчеркивание при наведении*/
-.nav__link:after {
+.desktop-nav__link:after {
 	content: "";
-/*	display: flex;*/
 	display: none;
-	position: absolute;  /*что бы выравнивать и
-	и позиционировать нашу полоску относительно родитебя
-	для этого нужно просисать position: relative; 
-	для родителя (тоесть) .nav__link*/
+	position: absolute;
 	top: 100%;
 	left: 0;
 	z-index: 1;
 }
 
-.nav__link:hover {
+.desktop-nav__link:hover {
 	background-color: #643a79;
     padding: 3px 13px;
 	color: #fff;
  	border-radius: 5px;
 }
 
-.nav__link:hover:after,
-.nav__link.active:after {
+.desktop-nav__link:hover:after,
+.desktop-nav__link.active:after {
 	display: block;
 }
 
-.nav__link.active {
+.desktop-nav__link.active {
 	background-color: #643a79;
     padding: 3px 13px;
 	color: #fff;
  	border-radius: 5px;
 }
 
-/* ВЫШЕ Делаем строчное подчеркивание при наведении*/
+ /* Mobile and Tablet Navigation */
+
+.burger__main-menu:hover .burger__link {
+	filter: blur(0px);
+}
+.burger__main-menu:hover .burger__link:hover {
+	filter: blur(0px);
+	border-bottom: 0;
+}
+
+/*nav Burger*/
+
+.burger__wrapper {
+	display: none;
+	width: 95%;
+	position: relative;
+	color: transparent;
+	text-align: center;
+	height: 50px;
+}
+
+#check-menu {
+	display: none;
+}
+
+.burger__label {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 2;
+	line-height: 40px;
+}
+
+.burger__line {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	width: 35px;
+	height: 2px;
+	background-color: #fff;
+	transition: .5s all;
+}
+
+.second, .third {
+	top: 18px;
+}
+
+.fourth {
+	top: 28px;
+}
+
+.burger__main-menu {
+	display: block;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	right: 30px;
+	transform: translateY(100%);
+	max-height: 0;
+	font-size: 0;
+	overflow: hidden;
+	transition: .5s all;
+	background-color: rgba(59, 56, 56, 0.9);
+	backdrop-filter: blur(2px);
+	border-radius: 11px;
+}
+
+.burger__link {
+	display: block;
+	margin: 13px;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.burger__link:hover {
+	color: #87509c;
+	padding-bottom: 0px;
+	transition: .5s;
+}
+
+#check-menu:checked ~ .burger__main-menu {
+	max-height: 700px;
+	font-size: 15px;
+}
+
+#check-menu:checked ~ .first {
+	display: none;
+}
+
+#check-menu:checked ~ .second {
+	transform: rotate(45deg);
+}
+
+#check-menu:checked ~ .third {
+	transform: rotate(-45deg);
+}
+
+#check-menu:checked ~ .fourth {
+	display: none;
+}
+
+#check-menu:checked ~ .burger__logo {
+display: none;
+}
+
+.burger__logo--mobile {
+	margin-top: 50px;
+}
+
+/* the end nav burger*/
+
 
 /*1en Section*/
 /*offer*/
 
 .offer {
-	/*делаем выравнивание для контента внутри по центру*/
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	/*конец*/
 	width: 100%;
 	height: 600px;
 	background-color: #87509c;
-	background-size: cover; /*что бы занимать всю площадь экрана*/
+	background-size: cover;
 }
 
 .main__offer {
@@ -151,23 +254,19 @@ p {
 /*Button*/
 
 .btn {
-	display: inline-block; /*выравнивание*/
+	display: inline-block;
 	padding: 28px 82px 25px 82px;
 	border-bottom: 5px solid #c86a40;
 	border-radius: 5px;
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 18px;
-	font-weight: 600; /*жирность*/
+	font-weight: 600;
 	color: #fff;
 	background-color: #eb7d4b;
-	text-transform: uppercase; /*КАПС*/
-	text-decoration: none; /*убераем 
-	подчеркивание в ссылке*/
+	text-transform: uppercase; 
+	text-decoration: none;
 	transition: background .1s linear, color .1s linear;
-	/*это плавность и смена фона и цвета шрифта при наведении*/
 }
-
-/*Делаем вид кнопки при наведении*/
 
 .btn:hover {
 	background-color: #fff;
@@ -183,7 +282,7 @@ p {
 	width: 100%;
 	height: 810px;
 	background-color: #17c2a4;
-	background-size: cover; /*что бы занимать всю площадь экрана*/
+	background-size: cover;
 }
 
 .section--lightblue {
@@ -192,7 +291,7 @@ p {
 	height: 1000px;
 	color: #3c4761;
 	background-color: #e7f1f8;
-	background-size: cover; /*что бы занимать всю площадь экрана*/
+	background-size: cover;
 }
 
 .section--white {
@@ -202,7 +301,7 @@ p {
     margin-bottom: 90px;
 	color: #3c4761;
 	background-color: #fff;
-	background-size: cover; /*что бы занимать всю площадь экрана*/
+	background-size: cover;
 }
 
 .section--skin {
@@ -211,7 +310,7 @@ p {
 	height: 1520px;
 	color: #393939;
 	background-color: #ffdd99;
-	background-size: cover; /*что бы занимать всю площадь экрана*/
+	background-size: cover;
 }
 
 .section--red {
@@ -362,6 +461,10 @@ p {
 	text-decoration: none;
 }
 
+.links img:hover {
+	opacity: 0.5;
+}
+
 /* 4en Section OUR SKILLS */ 
 /*diagram*/
 
@@ -370,7 +473,6 @@ p {
     flex-wrap: wrap;
     justify-content: center;
 	margin: 0 auto;
-/*	position: absolute;*/
 }
 
 .team__skill {
@@ -384,13 +486,12 @@ p {
 }
 
 .diagram__item {
-	position: relative; /*Возможность позиционировать
-	 елементы по другому*/
+	position: relative;
 	top: -125px;
 	left: 0;
 	font-size: 50px;
 	font-weight: 300;
-	text-transform: uppercase; /*капс*/
+	text-transform: uppercase;
 	text-align: center;
 }
 
@@ -409,22 +510,20 @@ p {
 	margin-top: 45px;
 	text-align: center;
 	font-size: 18px;
-	text-transform: uppercase; /*весь текст капсом*/
+	text-transform: uppercase;
 }
 
 .slider__link {
-	display: inline-block; /*что бы шли в строку*/
+	display: inline-block;
 	vertical-align: top;
-	margin-right: 10px; /*15px отступ слева и справа */
+	margin-right: 10px;
 	color: #393939;
 	position: relative;
 	background-color: #ebc985;
     padding: 3px 27px;
  	border-radius: 6px;
-	text-decoration: none; /*убираем подчеркивание
-	снизу и т.д*/
-	transition: background-color .1s linear; /*плавность
-	 смены цвета в меню при наведении*/
+	text-decoration: none;
+	transition: background-color .1s linear;
 }
 
 .slider__link:last-child {
@@ -469,7 +568,6 @@ p {
 .maket {
 	margin-bottom: 60px;
 	width: 50%;
-
 }
 
 .maket__title {
@@ -488,7 +586,7 @@ p {
 }
 
 .maket__btn {
-	display: inline-block; /*выравнивание*/
+	display: inline-block;
 	padding: 28px 60px 28px 60px;
 	border-bottom: 5px solid #14a58c;
 	border-radius: 5px;
@@ -500,7 +598,6 @@ p {
 	text-transform: uppercase; 
 	text-decoration: none;
 	transition: background .1s linear, color .1s linear;
-	/*это плавность и смена фона и цвета шрифта при наведении*/
 }
 
 /*Делаем вид кнопки при наведении*/
@@ -515,10 +612,8 @@ p {
 .about__us {
 	display: inline-flex;
     justify-content: space-between;
-	flex-wrap: wrap; /*что бы колонки 
-	могли перескакивать на новую строку*/
+	flex-wrap: wrap;
 	margin-top: 70px;
-/*	margin-left: 20px;*/
 }
 
 .about__us__item {
@@ -556,7 +651,6 @@ p {
 }
 
 .about__us__text {
-/*	margin-right: 50px;*/
 	font-size: 21px;
 	font-weight: 400;
 	font-style: italic;
@@ -616,6 +710,10 @@ p {
 	color: #fff;
 }
 
+.feedback__input::placeholder {
+	color: #fff;
+}
+
 .feedback__input__massage:focus {
 	outline: 1;
 	color: #fff;
@@ -623,11 +721,6 @@ p {
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 18px;
 	font-weight: 400;
-}
-
-/*цвет текста для текста внутри кнопки*/
-.feedback__input::placeholder {
-	color: #fff;
 }
 
 .feedback__input__massage::placeholder {
@@ -646,7 +739,7 @@ p {
 }
 
 .form__btn {
-	display: inline-block; /*выравнивание*/
+	display: inline-block;
 	padding: 30px 85px;
 	border-bottom: 5px solid #299ec5;
 	border-radius: 5px;
@@ -658,7 +751,6 @@ p {
 	text-transform: uppercase; 
 	text-decoration: none;
 	transition: background .1s linear, color .1s linear;
-	/*это плавность и смена фона и цвета шрифта при наведении*/
 }
 
 /*Делаем вид кнопки при наведении*/
@@ -704,18 +796,13 @@ p {
 	color: #30bae7;
 }
 
-
-
 /*THE END FOOTER*/
-
-
 
 
 /*Responsive*/
 
 /* 990px - 1230px */
 @media screen and (max-width: 1230px) {
-
 	.header {
 		padding: 58px 15px 15px 15px;
 	}
@@ -774,7 +861,6 @@ p {
 
 /* 770px - 990px */
 @media screen and (max-width: 990px) {
-
 	.section__title {
 		font-size: 30px;
 	}
@@ -871,8 +957,7 @@ p {
 
 /* 576px - 770px */
 @media screen and (max-width: 770px) {
-
-	.nav__link {
+	.desktop-nav__link {
 		margin-right: -5px;
 	}
 
@@ -910,15 +995,20 @@ p {
 	.footer__link {
     	font-size: 15px;
 	}
+	.desktop-nav {
+    	display: none;
+	}
+	.burger__wrapper {
+    	display: block;
+	}
 }
 
 /* 320px - 576px */
 @media screen and (max-width: 576px) {
-	
 	.maket__portfolio {
 		display: block;
 	}
-		
+
 	.maket {
 	    text-align: center;
 	    margin-bottom: 35px;
@@ -931,26 +1021,27 @@ p {
 	    position: relative;
 	    margin-bottom: 50px;
 	}
-
+	.feedback__input__massage {
+		width: 90%;
+	}
+	.feedback__input {
+		width: 42%;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* 320px - 576px */
+@media screen and (max-width: 370px) {
+	.about__us__item {
+    	padding-left: 0;
+	}
+	.about__us__photo {
+		display: none;
+	}
+	.footer__socials {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
 
 
 
@@ -960,16 +1051,3 @@ p {
 font-family: 'Open Sans', sans-serif;
 font-family: 'Titillium Web', sans-serif;
 font-family: 'Damion', cursive;*/
-
-
-
-
-
-
-
-
-
-
-
-
-

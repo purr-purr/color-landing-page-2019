@@ -15,13 +15,33 @@
 			<div class="header__inner">
 				<div class="header__logo">
 					<img src="../Color Landing Page/img/logo.png" alt=""></div>
-				<nav class="nav">
-					<a class="nav__link active" href="#yakor_about">Home</a>
-					<a class="nav__link" href="#yakor_service">About</a>
-					<a class="nav__link" href="#yakor_work">Work</a>
-					<a class="nav__link" href="#yakor_blog">Blog</a>
-					<a class="nav__link" href="#yakor_contact">Contact</a>
+
+				<nav class="desktop-nav">
+					<a class="desktop-nav__link active" href="#yakor_about">Home</a>
+					<a class="desktop-nav__link" href="#yakor_service">About</a>
+					<a class="desktop-nav__link" href="#yakor_work">Work</a>
+					<a class="desktop-nav__link" href="#yakor_blog">Blog</a>
+					<a class="desktop-nav__link" href="#yakor_contact">Contact</a>
 				</nav> <!-- END nav -->
+
+<!-- Mobile/Tablet Navigation -->
+
+				<div class="burger__wrapper">
+					<input type="checkbox" id="check-menu">
+					<label class="burger__label" for="check-menu"></label>
+						<div class="burger__line first"></div>
+						<div class="burger__line second"></div>
+						<div class="burger__line third"></div>
+						<div class="burger__line fourth"></div>
+						<nav class="burger__main-menu">
+		<!-- nav links -->
+							<li><a class="burger__link" href="#">About</a></li>
+							<li><a class="burger__link" href="#">How it Work</a></li>
+							<li><a class="burger__link" href="#">Services</a></li>
+							<li><a class="burger__link" href="#">FAQ</a></li>
+							<li><a class="burger__link" href="#">Contact</a></li>
+						</nav>
+				</div>
 			</div> <!-- END header__inner -->
 		</div> <!-- END container -->
 </header>
@@ -253,7 +273,6 @@ tempor incididunt ut labore et dolore magna aliqua.
 <section class="section section--skin">
 	<div class="container">
 		<div class="section__header">
-			
 			<h2 class="section__title section__title--skin">OUR PORTFOLIO</h2>
 			<div class="section__text">
 				<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet
@@ -262,46 +281,46 @@ consectetur, adipisci velit, sed quia non numquam
 			</div>
 		</div> <!-- END section__header -->
 			<div class="our__portfolio">
-				<div class="slider__portfolio">
-					<a class="slider__link active" href="#">all</a>
-					<a class="slider__link" href="#">web</a>
-					<a class="slider__link" href="#">apps</a>
-					<a class="slider__link" href="#">icons</a>
-				</div>
+			<div class="slider__portfolio">
+				<a class="slider__link active" href="#">all</a>
+				<a class="slider__link" href="#">web</a>
+				<a class="slider__link" href="#">apps</a>
+				<a class="slider__link" href="#">icons</a>
+			</div>
 
-				<div class="maket__portfolio">
-					<div class="maket">
-						<img src="../Color Landing Page/img/pc1.png" alt="">
-						<h3 class="maket__title">
-							Isometric Perspective Mock-Up
-						</h3>
-					</div>
-
-					<div class="maket">
-						<img src="../Color Landing Page/img/pc2.png" alt="">
-						<h3 class="maket__title">
-							Isometric Perspective Mock-Up
-						</h3>
-					</div>
-
-					<div class="maket">
-						<img src="../Color Landing Page/img/pc3.png" alt="">
-						<h3 class="maket__title">
-							Isometric Perspective Mock-Up
-						</h3>
-					</div>
-
-					<div class="maket">
-						<img src="../Color Landing Page/img/pc4.png" alt="">
-						<h3 class="maket__title">
+			<div class="maket__portfolio">
+				<div class="maket">
+					<img src="img/pc1.png" alt="">
+					<h3 class="maket__title">
 						Isometric Perspective Mock-Up
-						</h3>
-					</div>
+					</h3>
 				</div>
+
+				<div class="maket">
+					<img src="img/pc2.png" alt="">
+					<h3 class="maket__title">
+						Isometric Perspective Mock-Up
+					</h3>
+				</div>
+
+				<div class="maket">
+					<img src="img/pc3.png" alt="">
+					<h3 class="maket__title">
+						Isometric Perspective Mock-Up
+					</h3>
+				</div>
+
+				<div class="maket">
+					<img src="img/pc4.png" alt="">
+					<h3 class="maket__title">
+					Isometric Perspective Mock-Up
+					</h3>
+				</div>
+			</div>
+
 			<div class="btn__wrapper">
 				<a class="maket__btn" href="#">LOAD MORE PROJECTS</a>
 			</div>
-
 			</div> <!-- end our__portfolio -->
 	</div> <!-- end container -->
 </section>
@@ -399,3 +418,115 @@ consectetur, adipisci velit, sed quia non numquam
 </body>
 </html>
 
+				<div class="tab-frame">
+					<input type="radio" checked name="tab" id="tab1">
+					<label for="tab1" class="tab__hover">All</label>
+					
+					<input type="radio" name="tab" id="tab2">
+					<label for="tab2" class="tab__hover">Web</label>	
+
+					<input type="radio" name="tab" id="tab3">
+					<label for="tab3" class="tab__hover">Apps</label>
+
+					<input type="radio" name="tab" id="tab4">
+					<label for="tab4" class="tab__hover">Icons</label>
+						<div class="tab">
+							<div class="maket__portfolio">
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc1.png" alt="">
+									<h3 class="maket__title">
+										Isometric Perspective Mock-Up
+									</h3>
+								</div>
+
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc2.png" alt="">
+									<h3 class="maket__title">
+										Isometric Perspective Mock-Up
+									</h3>
+								</div>
+
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc3.png" alt="">
+									<h3 class="maket__title">
+										Isometric Perspective Mock-Up
+									</h3>
+								</div>
+
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc4.png" alt="">
+									<h3 class="maket__title">
+									Isometric Perspective Mock-Up
+									</h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab">
+							<div class="maket__portfolio">
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc2.png" alt="">
+									<h3 class="maket__title">
+										Isometric Perspective Mock-Up
+									</h3>
+								</div>
+
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc3.png" alt="">
+									<h3 class="maket__title">
+										Isometric Perspective Mock-Up
+									</h3>
+								</div>
+
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc4.png" alt="">
+									<h3 class="maket__title">
+									Isometric Perspective Mock-Up
+									</h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab">
+							<div class="maket__portfolio">
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc4.png" alt="">
+									<h3 class="maket__title">
+									Isometric Perspective Mock-Up
+									</h3>
+								</div>
+
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc2.png" alt="">
+									<h3 class="maket__title">
+										Isometric Perspective Mock-Up
+									</h3>
+								</div>
+
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc3.png" alt="">
+									<h3 class="maket__title">
+										Isometric Perspective Mock-Up
+									</h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab">
+							<div class="maket__portfolio">
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc2.png" alt="">
+									<h3 class="maket__title">
+										Isometric Perspective Mock-Up
+									</h3>
+								</div>
+
+								<div class="maket">
+									<img src="../Color Landing Page/img/pc3.png" alt="">
+									<h3 class="maket__title">
+										Isometric Perspective Mock-Up
+									</h3>
+								</div>
+							</div>
+						</div>
+				</div> <!-- \ tab-frame -->
